@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+	<style>.myClass{position:relative;width:100%;color:red}body{background-color:blue}</style>
+</head>
+<body>
+	33333y body
+	<script>document.addEventListener("DOMContentLoaded",function(event){(function(){let nav=document.getElementById('docsNav'),docsShowNav=document.getElementById('docsShowNav'),onMobile=false;docsShowNav.addEventListener('click',function(){onMobile=true;if(nav.style.display!="block")
+nav.style.display="block";else
+nav.style.display="none";});window.addEventListener('hashchange',function(){if(onMobile)
+nav.style.display="none";},false);})();});</script><script>document.addEventListener("DOMContentLoaded",function(event){(function(){let setViewByHash=function(){let hash=location.hash.substring(1);if(!document.getElementById(hash)){let a=document.querySelector('a[href="#'+hash+'"]'),path=a.getAttribute('data-path'),to=a.getAttribute('data-to'),parent=document.getElementById(to),newView=document.createElement('section');newView.id=hash;newView.innerHTML="pleas wait for a sec...";parent.appendChild(newView);if(!path.includes('.html'))
+path+='.html';fetch(path).then(function(response){return response.text()}).then(function(html){newView.innerHTML=html;}).catch(function(err){console.log('Failed to fetch page: ',err);newView.innerHTML="Network problem";});}
+let activeView=document.getElementById(hash),viewToActive=function(el){if(el.tagName!="BODY"){let siblings=el.parentNode.childNodes,i=0;[...siblings].forEach(function(sibling,i){if(sibling.tagName=='SECTION')
+sibling.classList.remove('active');});el.classList.add('active');return true;}else{return false;}};if(typeof(activeView)!='undefined'&&activeView!=null){while(viewToActive(activeView))
+activeView=activeView.parentNode;}};if(!location.hash){document.querySelector('a[href^="#"]').click();}else{setViewByHash();}
+window.addEventListener('hashchange',setViewByHash,false);})();});</script>
+</body>
+
